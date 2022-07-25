@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Loading.unity
+    guid: d41222c2181624a72978955e97f02333
+  - enabled: 1
+    path: Assets/Scenes/Lobby.unity
+    guid: 43edfc55c3b1446d8927422da47e8db1
+  - enabled: 1
+    path: Assets/Scenes/Prototyping/Car.unity
+    guid: 60cb9abf60e2e4c5aa3f5ff89138af9e
+  - enabled: 1
+    path: Assets/Scenes/Prototyping/Beach.unity
+    guid: 81b2df3aa43cc4180b20c5a1878217f2
   m_configObjects: {}
