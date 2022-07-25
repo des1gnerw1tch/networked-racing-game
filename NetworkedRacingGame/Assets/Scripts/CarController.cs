@@ -10,7 +10,12 @@ public class CarController : MonoBehaviour
     private bool gasPressed;
 	private bool leftPressed;
 	private bool rightPressed;
-    
+	private bool reset;
+     
+	private void Start()	{
+		rb.centerOfMass = new Vector3(0.0f, -0.3f, 0.0f);
+	}
+	
     private void OnGas()
     {
         gasPressed = true;
@@ -42,6 +47,11 @@ public class CarController : MonoBehaviour
     {
         rightPressed = false;
     }
+	
+	private void OnReset()
+	{
+		reset = true;
+	}
 
     private void FixedUpdate()
     {
@@ -59,14 +69,30 @@ public class CarController : MonoBehaviour
             
         }
 		
-		if (rightPressed)
+		if (rightPressed && rb.velocity.magnitude > 2)
 		{
-			rb.transform.Rotate(0.0f, 1.0f, 0.0f, Space.Self);
+			rb.transform.Rotate(0.0f, 10f/rb.velocity.magnitude, 0.0f, Space.Self);
 		}
 		
-		if (leftPressed)
+		if (rightPressed && rb.velocity.magnitude <= 2 && rb.velocity.magnitude > 0)
 		{
-			rb.transform.Rotate(0.0f, -1.0f, 0.0f, Space.Self);
+			rb.transform.Rotate(0.0f, 5.0f, 0.0f, Space.Self);
+		}
+		
+		if (leftPressed && rb.velocity.magnitude > 2)
+		{
+			rb.transform.Rotate(0.0f, -10f/rb.velocity.magnitude, 0.0f, Space.Self);
+		}
+		
+		if (leftPressed && rb.velocity.magnitude <= 2 && rb.velocity.magnitude > 0)
+		{
+			rb.transform.Rotate(0.0f, -5.0f, 0.0f, Space.Self);
+		}
+		
+		if (reset)
+		{
+			rb.transform.rotation = Quaternion.Euler(0, rb.transform.rotation.eulerAngles.y, 0);
+			reset = false;
 		}
 		
     }
