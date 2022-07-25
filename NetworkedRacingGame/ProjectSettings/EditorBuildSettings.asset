@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Prototyping/Beach.unity
     guid: 81b2df3aa43cc4180b20c5a1878217f2
+  - enabled: 1
+    path: Assets/Scenes/IslandRoad.unity
+    guid: f1eb75015fa204648a41b6566ab5887f
   m_configObjects: {}
