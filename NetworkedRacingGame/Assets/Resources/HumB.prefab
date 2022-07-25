@@ -224,6 +224,7 @@ GameObject:
   - component: {fileID: 4355423525437532187}
   - component: {fileID: 3893420437672697225}
   - component: {fileID: 3778391319131552196}
+  - component: {fileID: 7244303285055253011}
   m_Layer: 0
   m_Name: HumB
   m_TagString: Untagged
@@ -383,6 +384,20 @@ MonoBehaviour:
   m_SynchronizeAngularVelocity: 1
   m_TeleportEnabled: 1
   m_TeleportIfDistanceGreaterThan: 3
+--- !u!114 &7244303285055253011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5321382787700519459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66d83375b0c654e4c9bc607240489895, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myCamera: {fileID: 5321382787648347438}
+  photonView: {fileID: 4355423525437532187}
 --- !u!1 &5321382788067373348
 GameObject:
   m_ObjectHideFlags: 0
