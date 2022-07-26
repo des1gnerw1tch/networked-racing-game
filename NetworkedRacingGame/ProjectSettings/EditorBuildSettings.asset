@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/YasTrack.unity
     guid: fd9fa8175e01849d0b001a1de36edb22
+  - enabled: 1
+    path: Assets/Scenes/TrackSelect.unity
+    guid: 71f36d38fe57d422ab4348325ac53088
   m_configObjects: {}
