@@ -140,6 +140,14 @@ PrefabInstance:
       value: HotDogBus
       objectReference: {fileID: 0}
     - target: {fileID: 5321382787700519463, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
+      propertyPath: maxTurn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321382787700519463, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
+      propertyPath: turnSpeed
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321382787700519463, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
       propertyPath: acceleration
       value: 10
       objectReference: {fileID: 0}

@@ -133,6 +133,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -3.04
       objectReference: {fileID: 0}
+    - target: {fileID: 5321382787700519456, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
+      propertyPath: m_Drag
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321382787700519456, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
+      propertyPath: m_Mass
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321382787700519456, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
+      propertyPath: m_AngularDrag
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5321382787700519457, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
       propertyPath: m_Size.x
       value: 5.0548687
@@ -206,12 +218,20 @@ PrefabInstance:
       value: Rover
       objectReference: {fileID: 0}
     - target: {fileID: 5321382787700519463, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
+      propertyPath: maxTurn
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321382787700519463, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
+      propertyPath: turnSpeed
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321382787700519463, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
       propertyPath: acceleration
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 5321382787700519463, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
       propertyPath: maximumVelocity
-      value: 50
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 5321382788067373354, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
       propertyPath: m_Radius
