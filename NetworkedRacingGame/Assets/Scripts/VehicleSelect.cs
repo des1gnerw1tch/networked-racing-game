@@ -9,7 +9,7 @@ public class VehicleSelect : MonoBehaviour
     
     public static VehicleSelect Instance { get; private set; }
     
-    [SerializeField] private GameObject currentVehiclePrefab;
+    private GameObject currentVehiclePrefab;
     
     private void Awake()
     {
@@ -23,7 +23,7 @@ public class VehicleSelect : MonoBehaviour
         }
     }
 
-    public GameObject GetCurrentVehicle() => currentVehiclePrefab ?? defaultVehiclePrefab;
+    public GameObject GetCurrentVehicle() => currentVehiclePrefab != null ? currentVehiclePrefab : defaultVehiclePrefab;
 
     public void SetCurrentVehicle(GameObject vehicle)
     {

@@ -534,7 +534,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6634a4afd1fd49968da73047ff997a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultVehiclePrefab: {fileID: 5321382787700519459, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
+  defaultVehiclePrefab: {fileID: 3922912636159658522, guid: 582caf7deb6b945878ea750817e69cbf, type: 3}
+  currentVehiclePrefab: {fileID: 0}
 --- !u!1 &1495016370
 GameObject:
   m_ObjectHideFlags: 0
