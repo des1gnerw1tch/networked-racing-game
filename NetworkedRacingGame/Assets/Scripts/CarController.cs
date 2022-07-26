@@ -4,59 +4,41 @@ using UnityEngine;
 public class CarController : MonoBehaviour
 {
     [SerializeField] private Rigidbody rb;
+	[SerializeField] private WheelCollider flw;
+	[SerializeField] private WheelCollider frw;
+	[SerializeField] private WheelCollider blw;
+	[SerializeField] private WheelCollider brw;
     [SerializeField] private float acceleration = 20;
     [SerializeField] private float maximumVelocity = 100;
 
     private bool gasPressed;
 	private bool leftPressed;
 	private bool rightPressed;
+	private float steerFactor = 0;
 	
 	
      
 	private void Start()	{
-		rb.centerOfMass = new Vector3(0.0f, -0.3f, -6.0f);
+		rb.centerOfMass = new Vector3(0.0f, -0.5f, -0.0f);
 		GameObject spawnPosition = GameObject.FindWithTag("SpawnPosition");
 		if (spawnPosition != null)	{
 			rb.transform.position = spawnPosition.transform.position;
 		}
 	}
 	
-    private void OnGas()
-    {
-        gasPressed = true;
-        rb.drag = 0;
-    }
+    private void OnGas() {gasPressed = true; rb.drag = 0;}
 
-    private void OnGasReleased()
-    {
-        gasPressed = false;
-        rb.drag = 1;
-    }
+    private void OnGasReleased() {gasPressed = false; rb.drag = 1;}
 	
-    private void OnLeft()
-    {
-        leftPressed = true;
-    }
+    private void OnLeft() {leftPressed = true;}
 	
-    private void OnLeftReleased()
-    {
-        leftPressed = false;
-    }
+    private void OnLeftReleased() {leftPressed = false;}
 	
-    private void OnRight()
-    {
-        rightPressed = true;
-    }
+    private void OnRight() {rightPressed = true;}
 	
-    private void OnRightReleased()
-    {
-        rightPressed = false;
-    }
+    private void OnRightReleased() {rightPressed = false;}
 	
-	private void OnReset()
-	{
-		rb.transform.rotation = Quaternion.Euler(0, rb.transform.rotation.eulerAngles.y, 0);
-	}
+	private void OnReset() {rb.transform.rotation = Quaternion.Euler(0, rb.transform.rotation.eulerAngles.y, 0);}
 	
 	private void OnRestart()
 	{
@@ -68,7 +50,8 @@ public class CarController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (gasPressed)
+		WheelHit hit;
+        if (gasPressed && flw.GetGroundHit(out hit) && frw.GetGroundHit(out hit) && blw.GetGroundHit(out hit) && brw.GetGroundHit(out hit))
         {
             if (rb.velocity.magnitude < maximumVelocity)
             {
@@ -82,25 +65,19 @@ public class CarController : MonoBehaviour
             
         }
 		
-		if (rightPressed && rb.velocity.magnitude > 2)
-		{
-			rb.transform.Rotate(0.0f, 6.0f/rb.velocity.magnitude, 0.0f, Space.Self);
-		}
+		if (rightPressed && steerFactor < 2.0f) {steerFactor += 0.05f;}
+		if (leftPressed && steerFactor > -2.0f) {steerFactor -= 0.05f;}
+		if (!leftPressed && !rightPressed) {steerFactor -= steerFactor/5;}
 		
-		if (rightPressed && rb.velocity.magnitude <= 2 && rb.velocity.magnitude > 0)
+		if (!flw.GetGroundHit(out hit) && !frw.GetGroundHit(out hit))
 		{
-			rb.transform.Rotate(0.0f, 3.0f, 0.0f, Space.Self);
+			steerFactor -= steerFactor/3;
+			
 		}
+		rb.transform.Rotate(0.0f, steerFactor, 0.0f, Space.Self);
 		
-		if (leftPressed && rb.velocity.magnitude > 2)
-		{
-			rb.transform.Rotate(0.0f, -6.0f/rb.velocity.magnitude, 0.0f, Space.Self);
-		}
 		
-		if (leftPressed && rb.velocity.magnitude <= 2 && rb.velocity.magnitude > 0)
-		{
-			rb.transform.Rotate(0.0f, -3.0f, 0.0f, Space.Self);
-		}
+		
 		
     }
 }
