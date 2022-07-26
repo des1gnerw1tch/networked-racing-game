@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using Photon.Pun;
 
 public class CarController : MonoBehaviour
 {
@@ -21,6 +22,12 @@ public class CarController : MonoBehaviour
 	private float steerFactor = 0;
      
 	private void Start()	{
+		
+		if (!GetComponent<PhotonView>().IsMine)
+		{
+			Destroy(this);
+		}
+		
 		rb.centerOfMass = new Vector3(0.0f, -0.5f, -0.0f);
 		GameObject spawnPosition = GameObject.FindWithTag("SpawnPosition");
 		if (spawnPosition != null)	{
