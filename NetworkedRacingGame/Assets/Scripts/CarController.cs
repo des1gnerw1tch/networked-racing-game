@@ -10,10 +10,15 @@ public class CarController : MonoBehaviour
     private bool gasPressed;
 	private bool leftPressed;
 	private bool rightPressed;
-	private bool reset;
+	
+	
      
 	private void Start()	{
-		rb.centerOfMass = new Vector3(0.0f, -0.3f, 0.0f);
+		rb.centerOfMass = new Vector3(0.0f, -0.3f, -6.0f);
+		GameObject spawnPosition = GameObject.FindWithTag("SpawnPosition");
+		if (spawnPosition != null)	{
+			rb.transform.position = spawnPosition.transform.position;
+		}
 	}
 	
     private void OnGas()
@@ -50,7 +55,15 @@ public class CarController : MonoBehaviour
 	
 	private void OnReset()
 	{
-		reset = true;
+		rb.transform.rotation = Quaternion.Euler(0, rb.transform.rotation.eulerAngles.y, 0);
+	}
+	
+	private void OnRestart()
+	{
+		GameObject spawnPosition = GameObject.FindWithTag("SpawnPosition");
+		if (spawnPosition != null)	{
+			rb.transform.position = spawnPosition.transform.position;
+		}
 	}
 
     private void FixedUpdate()
@@ -71,28 +84,22 @@ public class CarController : MonoBehaviour
 		
 		if (rightPressed && rb.velocity.magnitude > 2)
 		{
-			rb.transform.Rotate(0.0f, 10f/rb.velocity.magnitude, 0.0f, Space.Self);
+			rb.transform.Rotate(0.0f, 6.0f/rb.velocity.magnitude, 0.0f, Space.Self);
 		}
 		
 		if (rightPressed && rb.velocity.magnitude <= 2 && rb.velocity.magnitude > 0)
 		{
-			rb.transform.Rotate(0.0f, 5.0f, 0.0f, Space.Self);
+			rb.transform.Rotate(0.0f, 3.0f, 0.0f, Space.Self);
 		}
 		
 		if (leftPressed && rb.velocity.magnitude > 2)
 		{
-			rb.transform.Rotate(0.0f, -10f/rb.velocity.magnitude, 0.0f, Space.Self);
+			rb.transform.Rotate(0.0f, -6.0f/rb.velocity.magnitude, 0.0f, Space.Self);
 		}
 		
 		if (leftPressed && rb.velocity.magnitude <= 2 && rb.velocity.magnitude > 0)
 		{
-			rb.transform.Rotate(0.0f, -5.0f, 0.0f, Space.Self);
-		}
-		
-		if (reset)
-		{
-			rb.transform.rotation = Quaternion.Euler(0, rb.transform.rotation.eulerAngles.y, 0);
-			reset = false;
+			rb.transform.Rotate(0.0f, -3.0f, 0.0f, Space.Self);
 		}
 		
     }
