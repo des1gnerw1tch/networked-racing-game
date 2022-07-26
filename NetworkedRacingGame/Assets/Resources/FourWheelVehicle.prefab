@@ -292,6 +292,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 5321382787700519456}
+  flw: {fileID: 5321382787479708936}
+  frw: {fileID: 5321382788291011747}
+  blw: {fileID: 5321382787602795749}
+  brw: {fileID: 5321382788067373354}
   acceleration: 20
   maximumVelocity: 100
 --- !u!114 &5321382787700519462
