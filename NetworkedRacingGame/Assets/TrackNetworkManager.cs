@@ -34,9 +34,6 @@ public class TrackNetworkManager : MonoBehaviour
     }
 
     [PunRPC]
-    private void RPC_LoadTrackSelectScene()
-    {
-        PhotonNetwork.Destroy(vehicleInstance);
-        PhotonNetwork.LoadLevel("TrackSelect");
-    }
+    private void RPC_LoadTrackSelectScene() => PhotonNetwork.LoadLevel("TrackSelect");
+    
 }
