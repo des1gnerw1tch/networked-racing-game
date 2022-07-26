@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/IslandRoad.unity
     guid: f1eb75015fa204648a41b6566ab5887f
+  - enabled: 1
+    path: Assets/Scenes/Prototyping/Track.unity
+    guid: 998fad42c90c54553b3e3622dc4aea39
   m_configObjects: {}
