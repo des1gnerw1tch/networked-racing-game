@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
 
@@ -8,7 +6,7 @@ public class EnableCorrectCamera : MonoBehaviour
     [SerializeField] private Camera myCamera;
     [SerializeField] private PhotonView photonView;
     
-    private void Start()
+    private void OnEnable()
     {
         if (photonView.IsMine)
         {
