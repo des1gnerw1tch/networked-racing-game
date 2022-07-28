@@ -1,4 +1,3 @@
-using Photon.Pun;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,12 +11,16 @@ public class ChooseVehicleHelperUI : MonoBehaviour
     
     [SerializeField] private Button hotDogButton;
     [SerializeField] private GameObject hotDog;
+
+    [SerializeField] private Button cadillacButton;
+    [SerializeField] private GameObject cadillac;
     
     private void Start()
     {
         humBButton.onClick.AddListener(delegate { ChangeVehicle(humB, humBButton); });;
         roverButton.onClick.AddListener( delegate { ChangeVehicle(rover, roverButton); });
         hotDogButton.onClick.AddListener( delegate { ChangeVehicle(hotDog, hotDogButton); });
+        cadillacButton.onClick.AddListener(delegate { ChangeVehicle(cadillac, cadillacButton); });
     }
 
     private void ChangeVehicle(GameObject prefab, Button selectedButton)
