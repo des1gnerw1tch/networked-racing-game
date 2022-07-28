@@ -3,6 +3,11 @@ using Photon.Pun;
 
 namespace RaceLogic
 {
+    /// Setup cars at beginning of race:
+    /// 1. Each car calls RPC to request their position. Only sends to master client. Also turn CarController off. 
+    /// 2. Master client will keep list of available spots (TrackNetworkManager). Will send position of first available spot when receive request, and then mark that spot taken
+    /// 3. Each client will receive position data and move to that spot
+    /// 4. Master client starts countdown to enable car controller
     [RequireComponent(typeof(PhotonView))]
     public class SetVehicleStartPosition : MonoBehaviour
     {

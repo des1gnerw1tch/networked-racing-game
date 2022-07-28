@@ -6,12 +6,6 @@ namespace RaceLogic
 {
     /// <summary>
     /// Handles instantiation and destruction of vehicle prefab. Also handles navigation back to track select screen
-    ///
-    /// Setup cars at beginning of race:
-    /// 1. Each car calls RPC to request their position (in SetVehicleStartPosition), also turn CarController off. 
-    /// 2. Master client will keep list of available spots. Will send position of first available spot when receive request, and then mark that spot taken
-    /// 3. Each client will receive position data and move to that spot
-    /// 4. Master client starts countdown to enable car controller
     /// </summary>
     public class TrackNetworkManager : MonoBehaviour
     {
