@@ -12,12 +12,14 @@ public class CarController : MonoBehaviour
 	[SerializeField] private WheelCollider brw;
 	
     [SerializeField] private float acceleration = 20;
-	[SerializeField] private float downForce = 100000;
+	[SerializeField] private float brakeForce = 30;
+	[SerializeField] private float downForce = 10000;
     [SerializeField] private float maximumVelocity = 100;
 	[SerializeField] private float turnSpeed = 0.05f;
 	[SerializeField] private float maxTurn = 2.0f;
 	
     private bool gasPressed;
+	private bool brakePressed;
 	private bool leftPressed;
 	private bool rightPressed;
 	private float steerFactor = 0;
@@ -29,16 +31,20 @@ public class CarController : MonoBehaviour
 			Destroy(this);
 		}
 		
-		rb.centerOfMass = new Vector3(0.0f, -0.5f, -0.0f);
+		//rb.centerOfMass = new Vector3(0.0f, -0.5f, -0.0f);
 		GameObject spawnPosition = GameObject.FindWithTag("SpawnPosition");
 		if (spawnPosition != null)	{
 			rb.transform.position = spawnPosition.transform.position;
 		}
 	}
 	
-    private void OnGas() {gasPressed = true; }//rb.drag = 1;}
+    private void OnGas() {gasPressed = true;}
 
-    private void OnGasReleased() {gasPressed = false; }//rb.drag = 1;}
+    private void OnGasReleased() {gasPressed = false;}
+	
+    private void OnBrake() {brakePressed = true;}
+
+    private void OnBrakeReleased() {brakePressed = false;}
 	
     private void OnLeft() {leftPressed = true;}
 	
@@ -61,10 +67,26 @@ public class CarController : MonoBehaviour
     private void FixedUpdate()
     {
 		WheelHit hit;
-        if (gasPressed && flw.GetGroundHit(out hit) && frw.GetGroundHit(out hit) && blw.GetGroundHit(out hit) && brw.GetGroundHit(out hit))
+        if (gasPressed)
         {
-            Debug.Log("Accelerating!");
-            rb.AddForce(rb.transform.forward * acceleration);
+			if (flw.GetGroundHit(out hit) || frw.GetGroundHit(out hit) || blw.GetGroundHit(out hit) || brw.GetGroundHit(out hit))
+            {
+				Debug.Log("Accelerating!");
+            	rb.AddForce(rb.transform.forward * acceleration);
+			}
+            
+        }
+		
+        if (brakePressed)
+        {
+			if (-5 > rb.velocity.magnitude || rb.velocity.magnitude > 5)
+			{
+				if (flw.GetGroundHit(out hit) || frw.GetGroundHit(out hit) || blw.GetGroundHit(out hit) || brw.GetGroundHit(out hit))
+	            {
+					Debug.Log("Braking!");
+		            rb.AddForce(rb.transform.forward * -brakeForce);
+	            }
+			}
             
         }
 		
