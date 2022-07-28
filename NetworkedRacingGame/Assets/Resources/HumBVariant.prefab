@@ -6507,8 +6507,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5321382787700519456, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
+      propertyPath: m_Mass
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321382787700519456, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
       propertyPath: m_AngularDrag
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321382787700519456, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321382787700519456, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5321382787700519458, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
       propertyPath: m_RootOrder
@@ -6558,8 +6570,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: HumBVariant
       objectReference: {fileID: 0}
+    - target: {fileID: 5321382787700519463, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
+      propertyPath: flw
+      value: 
+      objectReference: {fileID: 3922912636046368049}
+    - target: {fileID: 5321382787700519463, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
+      propertyPath: frw
+      value: 
+      objectReference: {fileID: 3922912636844563610}
+    - target: {fileID: 5321382787700519463, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
+      propertyPath: downForce
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321382787700519463, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
+      propertyPath: acceleration
+      value: 100000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
+--- !u!146 &3922912636046368049 stripped
+WheelCollider:
+  m_CorrespondingSourceObject: {fileID: 5321382787479708936, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
+  m_PrefabInstance: {fileID: 9199065346000320569}
+  m_PrefabAsset: {fileID: 0}
+--- !u!146 &3922912636844563610 stripped
+WheelCollider:
+  m_CorrespondingSourceObject: {fileID: 5321382788291011747, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
+  m_PrefabInstance: {fileID: 9199065346000320569}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3922912637134832359 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5321382788537285342, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}

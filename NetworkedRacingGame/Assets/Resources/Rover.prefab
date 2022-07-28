@@ -105,6 +105,10 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5321382787479708936, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
+      propertyPath: m_SidewaysFriction.m_ExtremumSlip
+      value: 0.9
+      objectReference: {fileID: 0}
     - target: {fileID: 5321382787479708937, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.49
@@ -120,6 +124,10 @@ PrefabInstance:
     - target: {fileID: 5321382787602795749, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
       propertyPath: m_Radius
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321382787602795749, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
+      propertyPath: m_SidewaysFriction.m_ExtremumSlip
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 5321382787602795750, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
       propertyPath: m_LocalPosition.x
@@ -222,12 +230,16 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5321382787700519463, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
+      propertyPath: downForce
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321382787700519463, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
       propertyPath: turnSpeed
       value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5321382787700519463, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
       propertyPath: acceleration
-      value: 40
+      value: 50000
       objectReference: {fileID: 0}
     - target: {fileID: 5321382787700519463, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
       propertyPath: maximumVelocity
@@ -236,6 +248,10 @@ PrefabInstance:
     - target: {fileID: 5321382788067373354, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
       propertyPath: m_Radius
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321382788067373354, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
+      propertyPath: m_SidewaysFriction.m_ExtremumSlip
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 5321382788067373355, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
       propertyPath: m_LocalPosition.x
@@ -252,6 +268,10 @@ PrefabInstance:
     - target: {fileID: 5321382788291011747, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
       propertyPath: m_Radius
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321382788291011747, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
+      propertyPath: m_SidewaysFriction.m_ExtremumSlip
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 5321382788291011772, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
       propertyPath: m_LocalPosition.x
