@@ -35,5 +35,6 @@ public class ChooseVehicleHelperUI : MonoBehaviour
         humBButton.transform.localScale = new Vector3(1, 1, 1);
         roverButton.transform.localScale = new Vector3(1, 1, 1);
         hotDogButton.transform.localScale = new Vector3(1, 1, 1);
+        cadillacButton.transform.localScale = new Vector3(1, 1, 1);
     }
 }
