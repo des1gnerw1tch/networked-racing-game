@@ -43,6 +43,8 @@ MonoBehaviour:
   - RPC_LoadTrackSelectScene
   - RPC_TrackSelected
   - RPC_SetNameTag
+  - RPC_RequestVehicleStartingPosition
+  - RPC_SetVehicleStartingPosition
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1
