@@ -6583,8 +6583,12 @@ PrefabInstance:
       value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 5321382787700519463, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
+      propertyPath: brakeForce
+      value: 70000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321382787700519463, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
       propertyPath: acceleration
-      value: 100000
+      value: 50000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6005b65864f204841b397bb15a4cfdba, type: 3}
