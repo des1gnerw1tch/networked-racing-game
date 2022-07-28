@@ -12,6 +12,7 @@ public class CarController : MonoBehaviour
 	[SerializeField] private WheelCollider brw;
 	
     [SerializeField] private float acceleration = 20;
+	[SerializeField] private float downForce = 100000;
     [SerializeField] private float maximumVelocity = 100;
 	[SerializeField] private float turnSpeed = 0.05f;
 	[SerializeField] private float maxTurn = 2.0f;
@@ -62,17 +63,16 @@ public class CarController : MonoBehaviour
 		WheelHit hit;
         if (gasPressed && flw.GetGroundHit(out hit) && frw.GetGroundHit(out hit) && blw.GetGroundHit(out hit) && brw.GetGroundHit(out hit))
         {
-            if (rb.velocity.magnitude < maximumVelocity)
-            {
-                Debug.Log("Accelerating!");
-                rb.AddForce(rb.transform.forward * acceleration, ForceMode.Acceleration);
-            }
-            else
-            {
-                Debug.Log("Reached max speed");
-            }
+            Debug.Log("Accelerating!");
+            rb.AddForce(rb.transform.forward * acceleration);
             
         }
+		
+		if (flw.GetGroundHit(out hit) || frw.GetGroundHit(out hit) || blw.GetGroundHit(out hit) || brw.GetGroundHit(out hit))
+		{
+			rb.AddForce(rb.transform.up * -downForce * (rb.velocity.magnitude/50));
+		}
+		
 		
 		if (rightPressed && steerFactor < maxTurn) {steerFactor += turnSpeed;}
 		if (leftPressed && steerFactor > -maxTurn) {steerFactor -= turnSpeed;}
