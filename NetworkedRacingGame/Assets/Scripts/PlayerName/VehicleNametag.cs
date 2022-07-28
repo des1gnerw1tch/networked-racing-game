@@ -15,9 +15,9 @@ public class VehicleNametag : MonoBehaviour
         if (photonView.IsMine)
         {
             nametagObject.SetActive(false);
+            photonView.RPC("RPC_SetNameTag", RpcTarget.All, PlayerName.Instance.GetNickname());
         }
-        
-        photonView.RPC("RPC_SetNameTag", RpcTarget.All, PlayerName.Instance.GetNickname());
+
     }
 
     [PunRPC]
