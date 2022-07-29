@@ -19,6 +19,7 @@ namespace RaceLogic
             }
         }
         
+        // Only called on Master Client
         [PunRPC]
         private void RPC_RequestVehicleStartingPosition()
         {

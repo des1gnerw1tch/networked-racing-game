@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using Photon.Pun;
+using RaceLogic;
 
 public class CarController : MonoBehaviour
 {
@@ -110,5 +111,13 @@ public class CarController : MonoBehaviour
 		
 		
 		
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+	    if (other.CompareTag("FinishLine"))
+	    {
+		    TrackNetworkManager.Instance.IncrementLap();
+	    }
     }
 }

@@ -618,6 +618,10 @@ PrefabInstance:
       value: LevelComponents
       objectReference: {fileID: 0}
     - target: {fileID: 7977769971374320330, guid: 2f59d71ca1aca47b4be4e6308b627774, type: 3}
+      propertyPath: lapsToComplete
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977769971374320330, guid: 2f59d71ca1aca47b4be4e6308b627774, type: 3}
       propertyPath: startingRacePositions.Array.size
       value: 4
       objectReference: {fileID: 0}

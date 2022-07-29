@@ -70,6 +70,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   photonView: {fileID: 7608966457882995794}
   backToTrackSelectButton: {fileID: 4446149252580390499}
+  startingRacePositions: []
+  lapsToComplete: 3
 --- !u!1001 &2829856292770351067
 PrefabInstance:
   m_ObjectHideFlags: 0
